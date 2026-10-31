@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Extintores</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f9; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #007bff; color: white; }
+        .form-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; flex: 1; }
+        button { padding: 8px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .btn-danger { background: #dc3545; }
+        .btn-danger:hover { background: #c82333; }
+        .btn-logout { background: #6c757d; float: right; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+        <h1>Gestión de Extintores</h1>
+
+        <!-- Formulario para agregar -->
+        <div class="form-group">
+            <input type="text" id="tipo" placeholder="Tipo (ej. PQS)">
+            <input type="text" id="capacidad" placeholder="Capacidad (ej. 4.5 kg)">
+            <input type="number" id="year" placeholder="Año Fabricación">
+            <button onclick="agregarExtintor()">Agregar</button>
+        </div>
+
+        <!-- Tabla -->
+        <table id="tablaExtintores">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Capacidad</th>
+                    <th>Año</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
